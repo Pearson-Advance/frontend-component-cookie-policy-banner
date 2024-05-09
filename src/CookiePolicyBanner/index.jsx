@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { StatusAlert } from '@edx/paragon';
 import PropTypes from 'prop-types';
+import {
+  APP_CONFIG_INITIALIZED, mergeConfig, subscribe,
+} from '@edx/frontend-platform';
 
 import {
   ENGLISH_IETF_TAG,
@@ -17,6 +20,14 @@ import {
   hasViewedCookieBanner,
   createHasViewedCookieBanner,
 } from '../utilities';
+
+subscribe(APP_CONFIG_INITIALIZED, () => {
+  mergeConfig({
+    LANGUAGE_PREFERENCE_COOKIE_NAME: process.env.LANGUAGE_PREFERENCE_COOKIE_NAME || 'openedx-language-preference',
+    COOKIE_POLICY_COOKIE_DOMAIN: process.env.COOKIE_POLICY_COOKIE_DOMAIN,
+    COOKIE_POLICY_VIEWED_COOKIE_NAME: process.env.COOKIE_POLICY_VIEWED_COOKIE_NAME || 'cookieconsent_status',
+  }, 'Cookie Policy Banner additional config');
+});
 
 class CookieBanner extends Component {
   constructor(props) {
