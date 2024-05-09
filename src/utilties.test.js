@@ -6,7 +6,6 @@ import {
   ENGLISH_IETF_TAG,
   SPANISH_IETF_TAG,
   DEFAULT_IETF_TAG,
-  STAGE_ENVIRONMENTS,
   LOCALHOST,
 } from './constants';
 
