@@ -1,7 +1,6 @@
 import { getConfig } from "@edx/frontend-platform";
 // Read the env variables
-const LMS_BASE_URL = getConfig().LMS_BASE_URL || '';
-const COOKIE_POLICY_VIEWED_NAME = getConfig().COOKIE_POLICY_VIEWED_NAME || 'openedx-cookie-policy-viewed';
+const COOKIE_POLICY_VIEWED_NAME = getConfig().COOKIE_POLICY_VIEWED_NAME || 'cookieconsent_status';
 const SITE_NAME = getConfig().SITE_NAME || 'Your Platform Name Here';
 const COOKIE_POLICY_PAGE_URL = getConfig().COOKIE_POLICY_PAGE_URL || 'https://www.cookiesandyou.com/'
 
