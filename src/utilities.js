@@ -21,7 +21,7 @@ const getCookieCreationData = (cookieName = null) => {
   if (window.location.hostname.indexOf(LOCALHOST) >= 0) {
     domain = LOCALHOST;
   } else {
-    domain = getConfig().COOKIE_POLICY_COOKIE_DOMAIN;
+    domain = getConfig().COOKIE_POLICY_COOKIE_DOMAIN || window.location.hostname;
   }
 
   return {

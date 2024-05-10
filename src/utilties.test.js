@@ -23,7 +23,7 @@ describe('utilities', () => {
     it('localhost cookie creation data', () => {
       jsdom.reconfigure({ url: `http://${LOCALHOST}:8080/` });
       const expected = {
-        cookieName: 'openedx-cookie-policy-viewed',
+        cookieName: 'cookieconsent_status',
         domain: 'localhost',
         path: '/',
         maxAge: 2147483647,
