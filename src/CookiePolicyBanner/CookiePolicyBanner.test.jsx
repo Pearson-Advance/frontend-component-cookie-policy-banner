@@ -17,6 +17,15 @@ import {
 
 jest.mock('../utilities');
 jest.mock('../constants');
+jest.mock('@edx/frontend-platform', () => ({
+  getConfig: jest.fn(() => ({
+    LMS_BASE_URL: 'http://localhost:18000',
+    COOKIE_POLICY_COOKIE_DOMAIN: 'http://localhost:18000',
+    SESSION_COOKIE_DOMAIN: 'http://localhost:18000',
+    LANGUAGE_PREFERENCE_COOKIE_NAME: 'en'
+  })),
+  subscribe: jest.fn(() => {})
+}));
 
 describe('CookiePolicyBanner', () => {
   let props;

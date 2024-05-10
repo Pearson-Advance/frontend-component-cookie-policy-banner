@@ -1,7 +1,10 @@
-$cookie-banner-background-color: #f2f8fd !default;
-$cookie-banner-text-color: #4e4e4e !default;
-$cookie-banner-cta-base: #19291F !default;
-$cookie-banner-cta-hover: #075683 !default;
+@import "@edx/brand/paragon/fonts";
+@import "@edx/brand/paragon/variables";
+
+$cookie-banner-background-color: #323538 !default;
+$cookie-banner-text-color: #fefefe !default;
+$cookie-banner-cta-base: #fefefe !default;
+$cookie-banner-cta-hover: #fefefe !default;
 
 $font-family-sans-serif: Arial, sans-serif !default;
 $small-font-size: 14px;
