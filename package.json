@@ -1,6 +1,6 @@
 {
   "name": "@pearsonedunext/frontend-component-cookie-policy-banner",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "The pearson cookie policy banner component implemented in React.",
   "main": "build/index.js",
   "publishConfig": {
