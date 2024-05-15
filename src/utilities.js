@@ -63,7 +63,7 @@ const createHasViewedCookieBanner = (cookieName = null) => {
       && !!cookieCreationData.maxAge) {
     return new Cookie().set(
       cookieCreationData.cookieName,
-      true,
+      'dismiss',
       {
         domain: cookieCreationData.domain,
         path: cookieCreationData.path,
