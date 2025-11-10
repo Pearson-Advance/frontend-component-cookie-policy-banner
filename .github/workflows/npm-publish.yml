@@ -35,12 +35,6 @@ jobs:
     - name: Create Build
       run: npm run compile-prod
 
-    - name: Coverage
-      uses: codecov/codecov-action@v4
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        fail_ci_if_error: false
-
     - name: Release Package
       env:
         GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
