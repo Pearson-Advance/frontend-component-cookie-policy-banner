@@ -40,11 +40,11 @@ const getPolicyHTML = (tag, overrideText = {}) => {
   const linkClose = '</a>';
 
   if (tag === SPANISH_IETF_TAG) {
-    const linkOpen = `<a href="${COOKIE_POLICY_PAGE_URL} class="policy-link" target = "_blank" rel="noopener noreferrer"> `;
+    const linkOpen = `<a href="${COOKIE_POLICY_PAGE_URL}" class="policy-link" target = "_blank" rel="noopener noreferrer"> `;
     return `Esta página web usa cookies para que tenga la mejor experiencia en nuestro sitio web. Si continua usando este sitio, entender que usted acepta el use de cookies. ${linkOpen}Aprender más${linkClose}.`;
   }
 
-  const linkOpen = `<a href="${COOKIE_POLICY_PAGE_URL} class="policy-link" target = "_blank" rel="noopener noreferrer"> `;
+  const linkOpen = `<a href="${COOKIE_POLICY_PAGE_URL}" class="policy-link" target = "_blank" rel="noopener noreferrer"> `;
   return `This website uses cookies to ensure you get the best experience on our website. If you continue browsing this site, we understand that you accept the use of cookies. ${linkOpen}Learn more${linkClose}.`;
 };
 
