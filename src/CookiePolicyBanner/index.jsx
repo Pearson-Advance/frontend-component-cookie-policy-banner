@@ -1,10 +1,11 @@
 /* eslint-disable react/no-danger */
 import React, { Component } from 'react';
-import { StatusAlert } from '@openedx/paragon';
+import { PageBanner } from '@openedx/paragon';
 import PropTypes from 'prop-types';
 import {
   APP_CONFIG_INITIALIZED, mergeConfig, subscribe,
 } from '@edx/frontend-platform';
+import './_cookie-policy-banner.scss';
 
 import {
   ENGLISH_IETF_TAG,
@@ -76,13 +77,16 @@ class CookieBanner extends Component {
           aria-label={IETF_TAGS_TO_CONTAINER_ROLE_LABEL[ietfTag]}
           aria-live="polite"
         >
-          <StatusAlert
-            className="edx-cookie-banner"
-            open={this.state.open}
-            closeButtonAriaLabel={IETF_TAGS_TO_CLOSE_BUTTON_LABEL[ietfTag]}
-            dialog={(<span dangerouslySetInnerHTML={{ __html: getPolicyHTML(ietfTag, policyText) }} />)}
-            onClose={this.onClose}
-          />
+          <div className="edx-cookie-banner">
+            <PageBanner
+              variant="warning"
+              dismissible
+              onDismiss={this.onClose}
+              closeButtonAriaLabel={IETF_TAGS_TO_CLOSE_BUTTON_LABEL[ietfTag]}
+            >
+              <span dangerouslySetInnerHTML={{ __html: getPolicyHTML(ietfTag, policyText) }} />
+            </PageBanner>
+          </div>
         </div>
       );
     }
@@ -92,7 +96,7 @@ class CookieBanner extends Component {
 }
 
 CookieBanner.defaultProps = {
-  onClose: () => {},
+  onClose: () => { },
   languageCode: undefined,
   policyText: {},
   isViewedCookieName: null,
